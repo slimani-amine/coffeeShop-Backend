@@ -7,6 +7,8 @@ import { CoffeeRatingModule } from './coffee-rating/coffee-rating.module';
 import { ConfigModule } from '@nestjs/config';
 import Joi from '@hapi/joi';
 import appConfig from './config/app.config';
+import { CommonModule } from './common/common.module';
+import { LoggingMiddleware } from './common/middleware/logging.middleware';
 
 @Module({
   imports: [
@@ -27,6 +29,8 @@ import appConfig from './config/app.config';
     }),
     CoffeesModule,
     CoffeeRatingModule,
+    CommonModule,
+    // LoggingMiddleware
   ],
   controllers: [AppController],
   providers: [AppService],
